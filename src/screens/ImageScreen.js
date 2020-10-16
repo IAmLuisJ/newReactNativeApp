@@ -7,7 +7,7 @@ const ImageScreen = () => {
   return (
     <View>
       <Text style={styles.style}>ImageList</Text>
-      <ImageDetail />
+      <ImageDetail title="Beach" imageSource=" " score="2" />
     </View>
   );
 };
