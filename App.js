@@ -1,18 +1,16 @@
-/* eslint-disable quotes */
 import "react-native-gesture-handler";
 import React from "react";
-import { Text, View } from "react-native";
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import componentsScreen from "./src/screens/componentsScreen";
 import HomeScreen from "./src/screens/HomeScreen";
 import ListScreen from "./src/screens/ListScreen";
-import { startClock } from "react-native-reanimated";
 import ImageScreen from "./src/screens/ImageScreen";
 import CounterScreen from "./src/screens/CounterScreen";
 import ColorScreen from "./src/screens/ColorScreen";
 import ColorPicker from "./src/screens/ColorPicker";
+import JsonList from "./src/screens/JsonList";
 
 const Stack = createStackNavigator();
 
@@ -30,6 +28,7 @@ const App = () => {
         <Stack.Screen name="Counter" component={CounterScreen} />
         <Stack.Screen name="Color" component={ColorScreen} />
         <Stack.Screen name="ColorPicker" component={ColorPicker} />
+        <Stack.Screen name="jsonList" component={JsonList} />
       </Stack.Navigator>
     </NavigationContainer>
   );

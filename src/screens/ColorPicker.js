@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { Text, View, Button } from "react-native";
+import { Text, View } from "react-native";
 import ColorCounter from "../components/ColorCounter";
 
 const colorIncrement = 15;

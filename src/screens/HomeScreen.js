@@ -21,6 +21,10 @@ const HomeScreen = ({ navigation }) => {
         title="Go to ColorPicker Screen"
         onPress={() => navigation.navigate("ColorPicker")}
       />
+      <Button
+        title="Go to Json List"
+        onPress={() => navigation.navigate("jsonList")}
+      />
     </View>
   );
 };
