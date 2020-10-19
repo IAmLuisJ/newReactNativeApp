@@ -29,6 +29,10 @@ const HomeScreen = ({ navigation }) => {
         title="Go to Json List"
         onPress={() => navigation.navigate("jsonList")}
       />
+      <Button
+        title="Go to Text Screen"
+        onPress={() => navigation.navigate("TextScreen")}
+      />
     </View>
   );
 };

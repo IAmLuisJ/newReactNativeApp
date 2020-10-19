@@ -12,6 +12,7 @@ import CounterScreenReducer from "./src/screens/CounterScreenReducer";
 import ColorScreen from "./src/screens/ColorScreen";
 import ColorPicker from "./src/screens/ColorPicker";
 import JsonList from "./src/screens/JsonList";
+import TextScreen from "./src/screens/TextScreen";
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,7 @@ const App = () => {
         <Stack.Screen name="Color" component={ColorScreen} />
         <Stack.Screen name="ColorPicker" component={ColorPicker} />
         <Stack.Screen name="jsonList" component={JsonList} />
+        <Stack.Screen name="TextScreen" component={TextScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
