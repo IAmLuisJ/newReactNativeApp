@@ -14,6 +14,9 @@ const TextScreen = () => {
         onChangeText={(e) => setTextInput(e)}
       />
       <Text>Input is {textInput}</Text>
+      {textInput.length > 5 ? (
+        <Text>Input is more than 5 chracters</Text>
+      ) : null}
     </View>
   );
 };
