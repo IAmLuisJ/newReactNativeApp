@@ -5,20 +5,25 @@ import ColorCounter from "../components/ColorCounter";
 const colorIncrement = 15;
 
 const reducer = (state, action) => {
-  switch (action.colorToChange) {
-    case "red":
-      if (state.red + action.amount > 255 || state.red + action.amount < 0) {
+  // state === {red: number, green: number, blue: number}
+  // action === { type: "string", payload: int}
+
+  switch (action.type) {
+    case "CHANGE_RED":
+      if (state.red + action.payload > 255 || state.red + action.payload < 0) {
         return state;
       }
-      return { ...state, red: state.red + action.amount };
-    case "green":
-      return state.green + action.amount > 255 || state.red + action.amount < 0
+      return { ...state, red: state.red + action.payload };
+    case "CHANGE_GREEN":
+      return state.green + action.payload > 255 ||
+        state.red + action.payload < 0
         ? state
-        : { ...state, green: state.green + action.amount };
-    case "blue":
-      return state.blue + action.amount > 255 || state.blue + action.amount < 0
+        : { ...state, green: state.green + action.payload };
+    case "CHANGE_BLUE":
+      return state.blue + action.payload > 255 ||
+        state.blue + action.payload < 0
         ? state
-        : { ...state, blue: state.blue + action.amount };
+        : { ...state, blue: state.blue + action.payload };
     default:
       return state;
   }
@@ -30,6 +35,7 @@ const ColorPicker = () => {
     <View>
       <Text>Color</Text>
       <View
+        // eslint-disable-next-line react-native/no-inline-styles
         style={{
           height: 100,
           width: 100,
@@ -39,28 +45,28 @@ const ColorPicker = () => {
       <ColorCounter
         name="red"
         onIncrease={() =>
-          dispatch({ colorToChange: "red", amount: colorIncrement })
+          dispatch({ type: "CHANGE_RED", payload: colorIncrement })
         }
         onDecrease={() =>
-          dispatch({ colorToChange: "red", amount: -1 * colorIncrement })
+          dispatch({ type: "CHANGE_RED", payload: -1 * colorIncrement })
         }
       />
       <ColorCounter
         name="blue"
         onIncrease={() =>
-          dispatch({ colorToChange: "blue", amount: colorIncrement })
+          dispatch({ type: "CHANGE_BLUE", payload: colorIncrement })
         }
         onDecrease={() =>
-          dispatch({ colorToChange: "blue", amount: -1 * colorIncrement })
+          dispatch({ type: "CHANEL_BLUE", payload: -1 * colorIncrement })
         }
       />
       <ColorCounter
         name="green"
         onIncrease={() =>
-          dispatch({ colorToChange: "green", amount: colorIncrement })
+          dispatch({ type: "CHANGE_GREEN", payload: colorIncrement })
         }
         onDecrease={() =>
-          dispatch({ colorToChange: "green", amount: -1 * colorIncrement })
+          dispatch({ type: "CHANGE_GREEN", payload: -1 * colorIncrement })
         }
       />
     </View>
