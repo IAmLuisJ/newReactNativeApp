@@ -11,13 +11,13 @@ const ListScreen = () => {
   ];
 
   return (
-    <View>
-      <Text style={styles.basic}>List Screen</Text>
+    <View style={styles.viewStyle}>
+      <Text style={styles.textStyle}>List Screen</Text>
       <FlatList
         keyExtractor={(friend) => friend.name}
         data={friends}
         renderItem={({ item }) => {
-          return <Text>{item.name}</Text>;
+          return <Text style={styles.listStyle}>{item.name}</Text>;
         }}
       />
     </View>
@@ -25,8 +25,23 @@ const ListScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  basic: {
-    fontSize: 30,
+  viewStyle: {
+    borderWidth: 3,
+    borderColor: "black",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    ...StyleSheet.absoluteFillObject,
+  },
+  textStyle: {
+    borderWidth: 1,
+    borderColor: "red",
+    margin: 20,
+  },
+  listStyle: {
+    borderWidth: 1,
+    alignSelf: "center",
+    margin: 2,
   },
 });
+
 export default ListScreen;
